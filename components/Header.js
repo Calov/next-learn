@@ -17,11 +17,12 @@ import {
     ShoppingCartIcon,
 } from "@heroicons/react/outline";
 
-import Dropdown from './Dropdown';
+import NavbarDropdown from './NavbarDropdown';
+import Button from './Button';
 
 function Header() {
     const [selected, setSelected] = useState("")
-    
+    const navbar = ['Pricing', 'FAQ', 'Blog', 'Help Center', 'Login']
     return (
         <div className="header flex sticky top-0 items-center p-2 lg:px-10">
             {/* left */}
@@ -36,19 +37,15 @@ function Header() {
 
             {/* right */}
             <div className="flex flex-grow justify-end">
-                <div className="flex space-x-6 md:space-x-2">
-                    {/* <NavItem active Icon={HomeIcon} />
-                    <NavItem Icon={FlagIcon} />
-                    <NavItem Icon={PlayIcon} />
-                    <NavItem Icon={ShoppingCartIcon} />
-                    <NavItem Icon={UserGroupIcon} /> */}
+                <div className="flex space-x-6 md:space-x-2 items-center">
                     <ul className="flex text-white font-medium text-sm navbar px-5">
-                        <Dropdown selected={selected} setSelected={setSelected} />
-                        <li>Pricing</li>
-                        <li>FAQ</li>
-                        <li>Blog</li>
-                        <li>Help Center</li>
-                        <li>Login</li>
+                        <NavbarDropdown selected={selected} setSelected={setSelected} />
+                        {navbar.map((name, i) => (
+                            <li key={i} className="flex items-center">
+                                {name}
+                            </li>
+                        ))}
+                        <Button text="Try for Free" />
                     </ul>
                 </div>
             </div>

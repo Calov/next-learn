@@ -12,10 +12,13 @@
     }
     .navbar li {
         padding: 0 1.5rem;
+        cursor: pointer;
     }
     .dropdown {
+        display: flex;
         position: relative;
         user-select: none;
+        cursor: pointer;
     }
     .dropdown .dropdown-btn {
         padding: 0 1.25rem;
@@ -25,9 +28,13 @@
         align-items: center;
         justify-content: space-between;
     }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
     .dropdown .dropdown-content {
+        display: none;
         position: absolute;
-        top: 125%;
+        top: 100%;
         background-color: rgb(56, 56, 56);
         min-height: 20vh;
         padding: 1rem;
@@ -43,5 +50,22 @@
     }
     .dropdown .dropdown-content .dropdown-item:hover {
         background: #f4f4f4;
+        color: rgb(56, 56, 56);
+    }
+
+    .button {
+        display: flex;
+        color: rgb(56, 56, 56);
+        background-color: #fff;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border-radius: 2px;
+        border: 1px solid #fff;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        background: rgb(56, 56, 56);
+        color: #fff;
     }
 }
